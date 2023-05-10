@@ -20,7 +20,7 @@ export default {
 			sourcemap: true,
 		},
 	],
-	external: ['react'],
+	external: ['react', 'connection-state'],
 	plugins: [
 		del({ targets: path.parse(packageJson.main).dir + '/*' }),
 		peerDepsExternal(),
