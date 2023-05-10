@@ -10,6 +10,23 @@ You can play with it yourself here [filipchalupa.cz/use-connection-state](https:
 npm install use-connection-state
 ```
 
+## Usage
+
+```jsx
+import { useConnectionState } from 'use-connection-state'
+
+const App = () => {
+	const connection = useConnectionState()
+
+	return (
+		<main>
+			<h1>Connection state</h1>
+			<p>Online: {connection === 'online' ? 'yes' : 'no'}</p>
+		</main>
+	)
+}
+```
+
 ## Development
 
 - Install dependencies: `npm ci`
