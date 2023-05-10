@@ -1,6 +1,6 @@
 {
 	"name": "use-connection-state",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"description": "React hook to detect online and offline network state.",
 	"main": "./dist/index.js",
 	"module": "./dist/index.es.js",
