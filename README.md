@@ -27,6 +27,28 @@ const App = () => {
 }
 ```
 
+### Endpoints
+
+```jsx
+import { createUseConnectionStateHook } from 'use-connection-state'
+
+// Add endpoints to detect connection state. The library will try to fetch these endpoints.
+const useConnectionStateWithEndpoints = createUseConnectionStateHook({
+	endpoints: [location.href, 'https://www.google.com'],
+})
+
+const App = () => {
+	const connection = useConnectionStateWithEndpoints()
+
+	return (
+		<main>
+			<h1>Connection state</h1>
+			<p>Online: {connection === 'online' ? 'yes' : 'no'}</p>
+		</main>
+	)
+}
+```
+
 ## Development
 
 - Install dependencies: `npm ci`

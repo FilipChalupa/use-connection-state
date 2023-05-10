@@ -1,23 +1,3 @@
-import { connectionState } from 'connection-state'
-import { useEffect, useState } from 'react'
+import { createUseConnectionStateHook } from './createUseConnectionStateHook'
 
-const connection = connectionState()
-const getState = () => connection.getState()
-
-export const useConnectionState = () => {
-	const [state, setState] = useState(() => getState())
-
-	useEffect(() => {
-		const refresh = () => {
-			setState(getState())
-		}
-		refresh()
-
-		connection.addListener(refresh)
-		return () => {
-			connection.removeListener(refresh)
-		}
-	}, [])
-
-	return state
-}
+export const useConnectionState = createUseConnectionStateHook()
